@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="verifyValidLoginTest"/>
+          <include name="invalidLoginTest"/>
           <include name="loadConfig"/>
         </methods>
       </class> <!-- com.orangehrm.test.LoginPageTest -->

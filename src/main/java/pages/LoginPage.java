@@ -19,11 +19,18 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
 		this.actionDriver = new ActionDriver(driver);
-		
+		// allow re-initialization later via setDriver if driver was null at construction
 	}
 	
+	// allow tests to set or update the driver after BaseClass has initialized it
+	public void setDriver(WebDriver driver) {
+		if (this.actionDriver == null) {
+			this.actionDriver = new ActionDriver(driver);
+		} else {
+			this.actionDriver.setDriver(driver);
+		}
+	}
 	
-
 	public void login(String username, String password) {
 		actionDriver.enterText(userNameField, username);
 		actionDriver.enterText(passwordField, password);

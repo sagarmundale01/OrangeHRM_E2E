@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\sagar\AppData\Local\Temp\testng-eclipse-2032008671\testng-customsuite.xml</span>
+                    <span>C:\Users\sagar\AppData\Local\Temp\testng-eclipse-1303074606\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,6 +101,11 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.orangehrm.test.LoginPageTest" class="method navigator-link" hash-for-method="invalidLoginTest">invalidLoginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.orangehrm.test.LoginPageTest" class="method navigator-link" hash-for-method="verifyValidLoginTest">verifyValidLoginTest</a> <!-- method navigator-link -->
@@ -126,6 +131,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="invalidLoginTest">
+                  </a> <!-- invalidLoginTest -->
+                  <span class="method-name">invalidLoginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="verifyValidLoginTest">
                   </a> <!-- verifyValidLoginTest -->
                   <span class="method-name">verifyValidLoginTest</span>
@@ -136,7 +148,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\sagar\AppData\Local\Temp\testng-eclipse-2032008671\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\sagar\AppData\Local\Temp\testng-eclipse-1303074606\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,16 +197,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyValidLoginTest')
 data.setCell(0, 2, 'com.orangehrm.test.LoginPageTest')
-data.setCell(0, 3, 2004386);
+data.setCell(0, 3, 5717);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'invalidLoginTest')
+data.setCell(1, 2, 'com.orangehrm.test.LoginPageTest')
+data.setCell(1, 3, 2777);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 minutes</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -227,15 +243,35 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">60 ms</span>
+                <span class="method-start">65 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyValidLoginTest</span>
-                <span class="method-start">95 ms</span>
+                <span class="method-name">invalidLoginTest</span>
+                <span class="method-start">8019 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=invalidLoginTest status=SUCCESS method=LoginPageTest.invalidLoginTest()[pri:0, inst...)</span>
+                <span class="method-start">10796 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">11786 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">2004483 ms</span>
+                <span class="method-start">11786 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyValidLoginTest</span>
+                <span class="method-start">26667 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=verifyValidLoginTest status=SUCCESS method=LoginPageTest.verifyValidLoginTest()[pri...)</span>
+                <span class="method-start">32388 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">32800 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

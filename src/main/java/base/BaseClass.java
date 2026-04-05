@@ -19,10 +19,10 @@ import org.testng.annotations.BeforeSuite;
 public class BaseClass {
 
 	protected static Properties prop;
-	//public static Logger logger;
+	// public static Logger logger;
 
 	protected WebDriver driver;
-	protected ChromeOptions options;     // FirefoxOptions options = new FirefoxOptions();
+	protected ChromeOptions options; // FirefoxOptions options = new FirefoxOptions();
 										// EdgeOptions options = new EdgeOptions();
 
 	@BeforeSuite
@@ -34,22 +34,25 @@ public class BaseClass {
 
 	// initialize the webdriver
 
-	private void launchBrowser() {		
+	private void launchBrowser() {
 
 		String browser = prop.getProperty("browser");
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			options = new ChromeOptions();
 			options.addArguments("--start-maximized");
-			
+
 			driver = new ChromeDriver(options);
+			System.out.println("[BaseClass] WebDriver created (Chrome): " + driver);
 
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();
+			System.out.println("[BaseClass] WebDriver created (Firefox): " + driver);
 		}
 
 		else if (browser.equalsIgnoreCase("edge")) {
 			driver = new EdgeDriver();
+			System.out.println("[BaseClass] WebDriver created (Edge): " + driver);
 		} else {
 			throw new IllegalArgumentException("Browser not supported: " + browser);
 		}
@@ -73,10 +76,22 @@ public class BaseClass {
 	@BeforeMethod
 	public void setUp() throws IOException {
 
-		System.out.println("Setting up WebDriver for: " + this.getClass().getSimpleName());
+		System.out.println("[BaseClass] Setting up WebDriver for: " + this.getClass().getSimpleName());
+		// If a previous driver exists (possibly from previous test), quit it to ensure
+		// a fresh session
+		if (driver != null) {
+			try {
+				System.out.println("[BaseClass] Existing driver detected; quitting before new launch: " + driver);
+				driver.quit();
+			} catch (Exception e) {
+				System.out.println("[BaseClass] Unable to quit existing driver: " + e.getMessage());
+			}
+			driver = null;
+		}
 		launchBrowser();
 		configureBrowser();
 		staticWait(2);
+		System.out.println("[BaseClass] setup complete; driver=" + driver);
 
 	}
 
@@ -88,6 +103,7 @@ public class BaseClass {
 			} catch (Exception e) {
 				System.out.println("Unable to quit the driver: " + e.getMessage());
 			}
+			driver = null;
 		}
 	}
 

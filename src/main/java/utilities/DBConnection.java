@@ -6,10 +6,13 @@ public class DBConnection {
 	private static final String DB_USERNAME = "root";
 	private static final String DB_PASSWORD= "";
 	
+	
 	public static void getConnection() {
 		
 		System.out.println("Starting DB COnnection...");
+		
+		
+		
 	}
-	
 	
 }
